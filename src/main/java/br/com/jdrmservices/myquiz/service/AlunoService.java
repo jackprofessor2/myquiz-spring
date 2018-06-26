@@ -24,14 +24,14 @@ public class AlunoService {
 	}
 	
 	@Transactional
-	public void save(Aluno aluno) {
+	public Aluno save(Aluno aluno) {
 		Optional<Aluno> alunoOptional = alunos.findByNomeIgnoreCase(aluno.getCodigo());
 		
 		if(aluno.isNovo() && alunoOptional.isPresent()) {
 			throw new NegocioException(Constants.MESSAGE_EXISTS);
 		}
 		
-		alunos.saveAndFlush(aluno);
+		return alunos.saveAndFlush(aluno);
 	}
 	
 	@Transactional

@@ -24,14 +24,14 @@ public class ProfessorService {
 	}
 	
 	@Transactional
-	public void save(Professor professor) {
+	public Professor save(Professor professor) {
 		Optional<Professor> professorOptional = professores.findByNomeIgnoreCase(professor.getCodigo());
 		
 		if(professor.isNovo() && professorOptional.isPresent()) {
 			throw new NegocioException(Constants.MESSAGE_EXISTS);
 		}
 		
-		professores.saveAndFlush(professor);
+		return professores.saveAndFlush(professor);
 	}
 	
 	@Transactional

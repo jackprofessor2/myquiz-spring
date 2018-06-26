@@ -24,14 +24,14 @@ public class QuizService {
 	}
 	
 	@Transactional
-	public void save(Quiz quiz) {
+	public Quiz save(Quiz quiz) {
 		Optional<Quiz> quizOptional = quizes.findByEnunciadoIgnoreCase(quiz.getCodigo());
 		
 		if(quiz.isNovo() && quizOptional.isPresent()) {
 			throw new NegocioException(Constants.MESSAGE_EXISTS);
 		}
 		
-		quizes.saveAndFlush(quiz);
+		return quizes.saveAndFlush(quiz);
 	}
 	
 	@Transactional

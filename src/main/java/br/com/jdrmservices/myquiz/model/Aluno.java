@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import br.com.jdrmservices.myquiz.util.Constants;
+
 @Entity
 @Table(name = "aluno")
 public class Aluno {
@@ -15,11 +17,15 @@ public class Aluno {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	@NotBlank(message = "Nome é obrigatório")
+	@NotBlank(message = Constants.NAME_REQUIRED)
 	private String nome;
 	
-	@NotBlank(message = "E-mail é obrigatório")
+	@NotBlank(message = Constants.EMAIL_REQUIRED)
 	private String email;
+	
+	public boolean isNovo() {
+		return this.codigo == null;
+	}
 
 	public Long getCodigo() {
 		return codigo;

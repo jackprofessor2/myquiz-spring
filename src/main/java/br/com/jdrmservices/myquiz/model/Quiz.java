@@ -26,6 +26,10 @@ public class Quiz {
 	
 	@NotBlank(message = "Resposta é obrigatória")
 	private String resposta;
+	
+	public boolean isNovo() {
+		return this.codigo == null;
+	}
 
 	public Long getCodigo() {
 		return codigo;

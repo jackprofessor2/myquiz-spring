@@ -1,6 +1,11 @@
 package br.com.jdrmservices.myquiz.util;
 
 public class Constants {
+	// actions
+	public static final String ADD_ACTION = "ADICIONAR";
+	public static final String EDIT_ACTION = "EDITAR";
+	public static final String NO_ACTION = "";
+	
 	// messages
 	public static final String MESSAGE_ADD_SUCCESS = "Informações gravadas com sucesso!";
 	public static final String MESSAGE_ADD_ERROR = "Não foi possível gravar as informações";
@@ -18,4 +23,5 @@ public class Constants {
 	public static final String ALTERNATIVE_C = "Alternativa a é obrigatória";
 	public static final String ALTERNATIVE_D = "Alternativa a é obrigatória";
 	public static final String CORRECT_ALTERNATIVE = "Alternativa a é obrigatória";
+	public static final String PASSWORD_REQUIRED = "Senha é obrigatoria";
 }

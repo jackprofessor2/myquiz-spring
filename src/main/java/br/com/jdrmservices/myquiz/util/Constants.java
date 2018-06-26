@@ -20,9 +20,9 @@ public class Constants {
 	public static final String EMAIL_REQUIRED = "E-mail é obrigatório";
 	public static final String STATEMENT_QUESTION_REQUIRED = "O enunciado da questão é obrigatório";
 	public static final String ALTERNATIVE_A = "Alternativa a é obrigatória";
-	public static final String ALTERNATIVE_B = "Alternativa a é obrigatória";
-	public static final String ALTERNATIVE_C = "Alternativa a é obrigatória";
-	public static final String ALTERNATIVE_D = "Alternativa a é obrigatória";
-	public static final String CORRECT_ALTERNATIVE = "Alternativa a é obrigatória";
+	public static final String ALTERNATIVE_B = "Alternativa b é obrigatória";
+	public static final String ALTERNATIVE_C = "Alternativa c é obrigatória";
+	public static final String ALTERNATIVE_D = "Alternativa d é obrigatória";
+	public static final String CORRECT_ALTERNATIVE = "Alternativa correta é obrigatória";
 	public static final String PASSWORD_REQUIRED = "Senha é obrigatoria";
 }

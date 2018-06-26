@@ -7,6 +7,7 @@ public class Constants {
 	public static final String NO_ACTION = "";
 	
 	// messages
+	public static final String MESSAGE_EXISTS = "Informações já cadastradas";
 	public static final String MESSAGE_ADD_SUCCESS = "Informações gravadas com sucesso!";
 	public static final String MESSAGE_ADD_ERROR = "Não foi possível gravar as informações";
 	public static final String MESSAGE_ALTER_SUCCESS = "Informações alteradas com sucesso!";

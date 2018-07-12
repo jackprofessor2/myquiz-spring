@@ -26,4 +26,5 @@ public class Constants {
 	public static final String CORRECT_ALTERNATIVE = "Alternativa correta é obrigatória";
 	public static final String RESPONSE_ALTERNATIVE = "Alternativa é obrigatória";
 	public static final String PASSWORD_REQUIRED = "Senha é obrigatoria";
+	public static final String CADASTRO_PROFESSOR = "professor/cadastro-professor";
 }

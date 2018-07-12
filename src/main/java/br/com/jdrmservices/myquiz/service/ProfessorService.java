@@ -25,7 +25,7 @@ public class ProfessorService {
 	
 	@Transactional
 	public Professor save(Professor professor) {
-		Optional<Professor> professorOptional = professores.findByNomeIgnoreCase(professor.getCodigo());
+		Optional<Professor> professorOptional = professores.findByNomeIgnoreCase(professor.getNome());
 		
 		if(professor.isNovo() && professorOptional.isPresent()) {
 			throw new NegocioException(Constants.MESSAGE_EXISTS);

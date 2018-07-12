@@ -1,14 +1,16 @@
 package br.com.jdrmservices.myquiz.model;
 
-import java.util.List;
+//import java.util.ArrayList;
+//import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "quiz")
@@ -21,8 +23,21 @@ public class Quiz {
 	@NotBlank(message = "Enuncioado é obrigatório")
 	private String enunciado;
 	
-	@NotNull(message = "Alternativas são obrigatórias")
-	private List<String> alternativas;
+	@NotNull(message = "Alternativa 'A' é obrigatoria")
+	private String altA;
+	
+	@NotNull(message = "Alternativa 'B' é obrigatória")
+	private String altB;
+	
+	@NotNull(message = "Alternativa 'C' é obrigatória")
+	private String altC;
+	
+	@NotNull(message = "Alternativa 'D' é obrigatória")
+	private String altD;
+	
+	//@NotNull(message = "Alternativas são obrigatórias")
+	//@ManyToOne
+	//private List<String> alternativas = new ArrayList<>();
 	
 	@NotBlank(message = "Resposta é obrigatória")
 	private String resposta;
@@ -47,12 +62,36 @@ public class Quiz {
 		this.enunciado = enunciado;
 	}
 
-	public List<String> getAlternativas() {
-		return alternativas;
+	public String getAltA() {
+		return altA;
 	}
 
-	public void setAlternativas(List<String> alternativas) {
-		this.alternativas = alternativas;
+	public void setAltA(String altA) {
+		this.altA = altA;
+	}
+
+	public String getAltB() {
+		return altB;
+	}
+
+	public void setAltB(String altB) {
+		this.altB = altB;
+	}
+
+	public String getAltC() {
+		return altC;
+	}
+
+	public void setAltC(String altC) {
+		this.altC = altC;
+	}
+
+	public String getAltD() {
+		return altD;
+	}
+
+	public void setAltD(String altD) {
+		this.altD = altD;
 	}
 
 	public String getResposta() {

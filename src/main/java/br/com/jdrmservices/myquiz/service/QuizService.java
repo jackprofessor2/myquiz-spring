@@ -25,7 +25,7 @@ public class QuizService {
 	
 	@Transactional
 	public Quiz save(Quiz quiz) {
-		Optional<Quiz> quizOptional = quizes.findByEnunciadoIgnoreCase(quiz.getCodigo());
+		Optional<Quiz> quizOptional = quizes.findByEnunciadoIgnoreCase(quiz.getEnunciado());
 		
 		if(quiz.isNovo() && quizOptional.isPresent()) {
 			throw new NegocioException(Constants.MESSAGE_EXISTS);

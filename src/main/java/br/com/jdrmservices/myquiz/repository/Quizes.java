@@ -9,5 +9,5 @@ import br.com.jdrmservices.myquiz.model.Quiz;
 
 @Repository
 public interface Quizes extends JpaRepository<Quiz, Long> {
-	public Optional<Quiz> findByEnunciadoIgnoreCase(Long codigo);
+	public Optional<Quiz> findByEnunciadoIgnoreCase(String enunciado);
 }

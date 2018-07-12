@@ -9,5 +9,5 @@ import br.com.jdrmservices.myquiz.model.Aluno;
 
 @Repository
 public interface Alunos extends JpaRepository<Aluno, Long> {
-	public Optional<Aluno> findByNomeIgnoreCase(Long codigo);
+	public Optional<Aluno> findByNomeIgnoreCase(String nome);
 }

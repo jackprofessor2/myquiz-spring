@@ -9,5 +9,5 @@ import br.com.jdrmservices.myquiz.model.Professor;
 
 @Repository
 public interface Professores extends JpaRepository<Professor, Long> {
-	public Optional<Professor> findByNomeIgnoreCase(Long codigo);
+	public Optional<Professor> findByNomeIgnoreCase(String nome);
 }

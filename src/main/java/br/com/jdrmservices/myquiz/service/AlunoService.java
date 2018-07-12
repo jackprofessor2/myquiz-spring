@@ -25,7 +25,7 @@ public class AlunoService {
 	
 	@Transactional
 	public Aluno save(Aluno aluno) {
-		Optional<Aluno> alunoOptional = alunos.findByNomeIgnoreCase(aluno.getCodigo());
+		Optional<Aluno> alunoOptional = alunos.findByNomeIgnoreCase(aluno.getNome());
 		
 		if(aluno.isNovo() && alunoOptional.isPresent()) {
 			throw new NegocioException(Constants.MESSAGE_EXISTS);

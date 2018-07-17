@@ -32,5 +32,5 @@ public class Constants {
 	public static final String CADASTRO_PROFESSOR = "professor/cadastro-professor";
 	public static final String CADASTRO_ALUNO = "aluno/cadastro-aluno";
 	public static final String CADASTRO_QUIZ = "quiz/cadastro-questao";
-	public static final String CADASTRO_RESPOSTA = "responder/responder-quiz";
+	public static final String CADASTRO_RESPOSTA = "resposta/responder-quiz";
 }

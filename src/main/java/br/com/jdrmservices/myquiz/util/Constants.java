@@ -26,6 +26,11 @@ public class Constants {
 	public static final String CORRECT_ALTERNATIVE = "Alternativa correta é obrigatória";
 	public static final String RESPONSE_ALTERNATIVE = "Alternativa é obrigatória";
 	public static final String PASSWORD_REQUIRED = "Senha é obrigatoria";
-	public static final String CADASTRO_PROFESSOR = "professor/cadastro-professor";
 	public static final String INSTITUTION_REQUIRED = "Instituião é obrigatória";
+	
+	// pages
+	public static final String CADASTRO_PROFESSOR = "professor/cadastro-professor";
+	public static final String CADASTRO_ALUNO = "aluno/cadastro-aluno";
+	public static final String CADASTRO_QUIZ = "quiz/cadastro-questao";
+	public static final String CADASTRO_RESPOSTA = "responder/responder-quiz";
 }

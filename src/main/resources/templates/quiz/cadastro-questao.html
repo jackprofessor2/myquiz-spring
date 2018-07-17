@@ -1,44 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <base href="/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- apps default settings -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="MyQuiz">
-    <meta name="msapplication-TileImage" content="asserts/images/icons/icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#644100">   
-    <meta name="theme-color" content="#c43a0d">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="asserts/images/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" th:href="@{/images/logo.png}" type="image/x-icon" />
 
     <!-- manifest.json -->
-    <link rel="manifest" href="manifest.json" />
+    <!--<link rel="manifest" href="manifest.json" />-->
 
     <title>MyQuiz</title>
 
     <!-- google icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
 
     <!-- style.css -->
-    <link rel="stylesheet" type="text/css" href="asserts/css/style.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
  </head>
 <body>
-    <!-- header -->
     <header>
         <a href="javascript:;" class="float-left">
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
-        <a href="javascript:;" class="float-left">
-            <h1>MyQuiz</h1>
-        </a>
+        <a href="javascript:;" class="float-left">MyQuiz</a>
 
         <a href="javascript:;" class="float-right">
             <i class="material-icons">more_vert</i>
@@ -54,8 +42,8 @@
     </header>
 
     <!-- content -->
-    <content>
-        <form class="card" method="post" action="cadastro-professor.html">
+    <section>
+        <form class="card" method="post" action="/quizes">
             <!-- card title -->
             <div class="card-title">
                 <h1>CADASTRO DE QUESTÕES</h1>
@@ -75,11 +63,11 @@
                 
             <!-- card footer -->
             <div class="row card-footer">
-                <input id="salvar" class="col-s4" type="button" value="Salvar" />
+                <input id="salvar" class="col-s4" type="submit" value="Salvar" />
                 <input id="listar" class="col-s4" type="button" value="Listar" />
             </div>
         </form>
-    </content>
+    </section>
 
     <!-- footer -->
     <footer>
@@ -98,10 +86,13 @@
         <p>Copyright &copy; IFCE 2018, Todos os direitos reservados.</p>
     </footer>
 
-    <!-- scripts.js -->
-    <script type="text/javascript" src="asserts/js/layout.js"></script>
+    <!-- jquery.js -->
+    <script th:src="@{/js/vendors/jquery.min.js}"></script>
 
-    <!-- professor -->
-    <script type="text/javascript" src="controller/professores-controller.js"></script>
+    <!-- scripts.js -->
+    <script th:src="@{/js/layout.js}"></script>
+    
+     <!-- professor-crud.js -->
+    <script th:src="@{/js/quiz-crud.js}"></script>
 </body>
 </html>

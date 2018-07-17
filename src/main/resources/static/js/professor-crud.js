@@ -34,7 +34,6 @@ Professor.Crud = (function() {
 			success: function(resposta) {
 				alert('Cadastro realizado com sucesso!');
 				console.log('Cadastrado com sucesso!', resposta);
-				//console.log(JSON.stringify(professor));
 			},
 			error: function(error) {
 				alert('Erro ao realizar o cadastro!');

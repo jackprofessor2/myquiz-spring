@@ -27,9 +27,7 @@
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
-        <a href="javascript:;" class="float-left">
-            <h1>MyQuiz</h1>
-        </a>
+        <a href="javascript:;" class="float-left">MyQuiz</a>
 
         <a href="javascript:;" class="float-right">
             <i class="material-icons">more_vert</i>
@@ -45,8 +43,8 @@
     </header>
 
     <!-- content -->
-    <content>
-        <form class="card" method="post" th:action="@{/}">
+    <section>
+        <form method="POST" action="/professores">
             <!-- card title -->
             <div class="card-title">
                 <h1>CADASTRO DE PROFESSOR</h1>
@@ -55,21 +53,21 @@
             <!-- card content -->
             <div class="card-content">
                 <div class="row">
-                    <input id="id" type="hidden" class="col-s4" placeholder="Seu id" />
-                    <input id="nome" class="col-s4" type="text" placeholder="Seu nome" />
-                    <input id="instituicao" class="col-s4" type="text" placeholder="Sua instituição" />
-                    <input id="email" class="col-s4" type="text" placeholder="Seu e-mail" />
-                    <input id="senha" class="col-s4" type="password" placeholder="Sua senha" />
+	                <input id="id" type="hidden" class="col-s4" placeholder="Seu id" name="codigo" />
+	                <input id="nome" class="col-s4" type="text" placeholder="Seu nome" name="nome" />
+	                <input id="instituicao" class="col-s4" type="text" placeholder="Sua instituição" name="instituicao" />
+	                <input id="email" class="col-s4" type="text" placeholder="Seu e-mail" name="email" />
+	            	<input id="senha" class="col-s4" type="password" placeholder="Sua senha" name="senha" />
                 </div>
             </div>
                 
             <!-- card footer -->
             <div class="row card-footer">
-                <input id="salvar" class="col-s4" type="button" value="Salvar" />
+                <input id="salvar" class="col-s4" type="submit" value="Salvar" />
                 <input id="listar" class="col-s4" type="button" value="Listar" />
             </div>
         </form>
-    </content>
+    </section>
 
     <!-- footer -->
     <footer>
@@ -94,7 +92,7 @@
     <!-- scripts.js -->
     <script th:src="@{/js/layout.js}"></script>
     
-    <!-- scripts.js -->
+     <!-- professor-crud.js -->
     <script th:src="@{/js/professor-crud.js}"></script>
 </body>
 </html>

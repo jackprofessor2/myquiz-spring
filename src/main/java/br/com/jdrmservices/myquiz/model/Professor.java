@@ -1,5 +1,7 @@
 package br.com.jdrmservices.myquiz.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,14 +14,19 @@ import br.com.jdrmservices.myquiz.util.Constants;
 
 @Entity
 @Table(name = "professor")
-public class Professor {
-	
+public class Professor implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
 	@NotBlank(message = Constants.NAME_REQUIRED)
 	private String nome;
+	
+	@NotBlank(message = Constants.INSTITUTION_REQUIRED)
+	private String instituicao;
 	
 	@NotBlank(message = Constants.EMAIL_REQUIRED)
 	private String email;
@@ -45,6 +52,14 @@ public class Professor {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getInstituicao() {
+		return instituicao;
+	}
+
+	public void setInstituicao(String instituicao) {
+		this.instituicao = instituicao;
 	}
 
 	public String getEmail() {

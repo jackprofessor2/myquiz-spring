@@ -17,30 +17,28 @@ Professor.Crud = (function() {
 
 	onSave = function(e) {
 		e.preventDefault();
-		
-		let professores = [];	
-		let professor = new Object();
-		
-		professor.nome = this.nome;
-		professor.instituicao = this.instituicao;
-		professor.email = this.email;
-		professor.senha = this.senha;
-		
-		let professorJson = JSON.stringify(professor);
-		professores.push(professorJson);
-		
-		console.log(professores);
+
+		var professor = {
+			"nome": this.nome.val(),
+			"instituicao": this.instituicao.val(),
+			"email": this.email.val(),
+			"senha": this.senha.val()
+		};
 		
 		$.ajax({
+			type: 'POST',
+			contentType : 'application/json; charset=utf-8',
+			dataType: 'json',
 			url: '/professores',
-			method: 'POST',
-			dataType: "JSON"
-			data: parseJSON(professores),
+			data: JSON.stringify(professor),
 			success: function(resposta) {
-				console.log(resposta);
+				alert('Cadastro realizado com sucesso!');
+				console.log('Cadastrado com sucesso!', resposta);
+				//console.log(JSON.stringify(professor));
 			},
 			error: function(error) {
-				console.log(error);
+				alert('Erro ao realizar o cadastro!');
+				console.log('Erro ao cadastrar.', error);
 			}
 		});
 	}

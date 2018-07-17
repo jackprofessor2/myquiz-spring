@@ -61,7 +61,7 @@ header h1 {
 }
 
 /** content */
-content {
+section {
     background-color: transparent;
     width: 100%;
     height: auto;

@@ -12,6 +12,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+import br.com.jdrmservices.myquiz.util.Constants;
+
 @Entity
 @Table(name = "quiz")
 public class Quiz {
@@ -20,26 +22,25 @@ public class Quiz {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	@NotBlank(message = "Enuncioado é obrigatório")
+	@NotBlank(message = Constants.QUIZ_KEY)
+	private String quiz;
+	
+	@NotBlank(message = Constants.STATEMENT_QUESTION_REQUIRED)
 	private String enunciado;
 	
-	@NotNull(message = "Alternativa 'A' é obrigatoria")
+	@NotNull(message = Constants.ALTERNATIVE_A)
 	private String altA;
 	
-	@NotNull(message = "Alternativa 'B' é obrigatória")
+	@NotNull(message = Constants.ALTERNATIVE_B)
 	private String altB;
 	
-	@NotNull(message = "Alternativa 'C' é obrigatória")
+	@NotNull(message = Constants.ALTERNATIVE_C)
 	private String altC;
 	
-	@NotNull(message = "Alternativa 'D' é obrigatória")
+	@NotNull(message = Constants.ALTERNATIVE_D)
 	private String altD;
 	
-	//@NotNull(message = "Alternativas são obrigatórias")
-	//@ManyToOne
-	//private List<String> alternativas = new ArrayList<>();
-	
-	@NotBlank(message = "Resposta é obrigatória")
+	@NotBlank(message = Constants.CORRECT_ALTERNATIVE)
 	private String resposta;
 	
 	public boolean isNovo() {
@@ -52,6 +53,14 @@ public class Quiz {
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public String getQuiz() {
+		return quiz;
+	}
+
+	public void setQuiz(String quiz) {
+		this.quiz = quiz;
 	}
 
 	public String getEnunciado() {

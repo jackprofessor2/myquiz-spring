@@ -14,7 +14,7 @@ public class CadastroQuiz {
 
 	@GetMapping("/novo")
 	public ModelAndView novo(Quiz quiz) {
-		ModelAndView mv = new ModelAndView(Constants.CADASTRO_QUIZ);
+		ModelAndView mv = new ModelAndView(Constants.VIEW_CADASTRO_QUIZ);
 		return mv;
 	}
 	

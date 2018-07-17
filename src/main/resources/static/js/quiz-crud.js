@@ -5,6 +5,7 @@ Quiz.Crud = (function() {
 	
 	Crud = function() {
 		this.btnCadastrar = $('#salvar');
+		this.quiz = $('#quiz');
 		this.enunciado = $('#enunciado');
 		this.alternativa_a = $('#alternativa_a');
 		this.alternativa_b = $('#alternativa_b');
@@ -21,7 +22,7 @@ Quiz.Crud = (function() {
 		e.preventDefault();
 
 		var quiz = {
-			"enunciado": this.enunciado.val(),
+			"quiz": this.quiz.val(),
 			"altA": this.alternativa_a.val(),
 			"altB": this.alternativa_b.val(),
 			"altC": this.alternativa_c.val(),

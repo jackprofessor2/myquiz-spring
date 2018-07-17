@@ -19,7 +19,7 @@ public class CadastroResposta {
 
 	@GetMapping("/novo")
 	public ModelAndView novo(Resposta resposta) {
-		ModelAndView mv = new ModelAndView(Constants.CADASTRO_RESPOSTA);
+		ModelAndView mv = new ModelAndView(Constants.VIEW_CADASTRO_RESPOSTA);
 		mv.addObject("quizes", quizService.list());
 		return mv;
 	}

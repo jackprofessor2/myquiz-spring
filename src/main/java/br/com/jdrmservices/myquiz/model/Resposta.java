@@ -25,8 +25,8 @@ public class Resposta {
 	@ManyToOne
 	private Professor professor;
 	
-	@ManyToOne
-	private Quiz quiz;
+	@NotBlank(message = Constants.THEME_REQUIRED)
+	private String tema;
 	
 	@NotBlank(message = Constants.RESPONSE_ALTERNATIVE)
 	private String resposta;
@@ -59,12 +59,12 @@ public class Resposta {
 		this.professor = professor;
 	}
 
-	public Quiz getQuiz() {
-		return quiz;
+	public String getTema() {
+		return tema;
 	}
 
-	public void setQuiz(Quiz quiz) {
-		this.quiz = quiz;
+	public void setTema(String tema) {
+		this.tema = tema;
 	}
 
 	public String getResposta() {

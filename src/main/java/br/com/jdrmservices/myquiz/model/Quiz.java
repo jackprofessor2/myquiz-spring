@@ -1,5 +1,7 @@
 package br.com.jdrmservices.myquiz.model;
 
+import java.io.Serializable;
+
 //import java.util.ArrayList;
 //import java.util.List;
 
@@ -16,29 +18,31 @@ import br.com.jdrmservices.myquiz.util.Constants;
 
 @Entity
 @Table(name = "quiz")
-public class Quiz {
+public class Quiz implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	@NotBlank(message = Constants.QUIZ_KEY)
-	private String quiz;
+	@NotBlank(message = Constants.THEME_REQUIRED)
+	private String tema;
 	
 	@NotBlank(message = Constants.STATEMENT_QUESTION_REQUIRED)
 	private String enunciado;
 	
 	@NotNull(message = Constants.ALTERNATIVE_A)
-	private String altA;
+	private String alta;
 	
 	@NotNull(message = Constants.ALTERNATIVE_B)
-	private String altB;
+	private String altb;
 	
 	@NotNull(message = Constants.ALTERNATIVE_C)
-	private String altC;
+	private String altc;
 	
 	@NotNull(message = Constants.ALTERNATIVE_D)
-	private String altD;
+	private String altd;
 	
 	@NotBlank(message = Constants.CORRECT_ALTERNATIVE)
 	private String resposta;
@@ -55,12 +59,12 @@ public class Quiz {
 		this.codigo = codigo;
 	}
 
-	public String getQuiz() {
-		return quiz;
+	public String getTema() {
+		return tema;
 	}
 
-	public void setQuiz(String quiz) {
-		this.quiz = quiz;
+	public void setTema(String tema) {
+		this.tema = tema;
 	}
 
 	public String getEnunciado() {
@@ -71,36 +75,36 @@ public class Quiz {
 		this.enunciado = enunciado;
 	}
 
-	public String getAltA() {
-		return altA;
+	public String getAlta() {
+		return alta;
 	}
 
-	public void setAltA(String altA) {
-		this.altA = altA;
+	public void setAlta(String alta) {
+		this.alta = alta;
 	}
 
-	public String getAltB() {
-		return altB;
+	public String getAltb() {
+		return altb;
 	}
 
-	public void setAltB(String altB) {
-		this.altB = altB;
+	public void setAltb(String altb) {
+		this.altb = altb;
 	}
 
-	public String getAltC() {
-		return altC;
+	public String getAltc() {
+		return altc;
 	}
 
-	public void setAltC(String altC) {
-		this.altC = altC;
+	public void setAltc(String altc) {
+		this.altc = altc;
 	}
 
-	public String getAltD() {
-		return altD;
+	public String getAltd() {
+		return altd;
 	}
 
-	public void setAltD(String altD) {
-		this.altD = altD;
+	public void setAltd(String altd) {
+		this.altd = altd;
 	}
 
 	public String getResposta() {

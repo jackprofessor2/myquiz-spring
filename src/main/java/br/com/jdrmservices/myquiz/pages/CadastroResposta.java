@@ -15,13 +15,20 @@ import br.com.jdrmservices.myquiz.util.Constants;
 public class CadastroResposta {
 	
 	@Autowired
+	private QuizService alunosService;
+	
+	@Autowired
+	private QuizService professoresService;
+	
+	@Autowired
 	private QuizService quizService;
 
 	@GetMapping("/novo")
 	public ModelAndView novo(Resposta resposta) {
 		ModelAndView mv = new ModelAndView(Constants.VIEW_CADASTRO_RESPOSTA);
+		mv.addObject("alunos", alunosService.list());
+		mv.addObject("professores", professoresService.list());
 		mv.addObject("quizes", quizService.list());
 		return mv;
 	}
-	
 }

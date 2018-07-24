@@ -27,11 +27,13 @@ public class Constants {
 	public static final String RESPONSE_ALTERNATIVE = "Alternativa é obrigatória";
 	public static final String PASSWORD_REQUIRED = "Senha é obrigatoria";
 	public static final String INSTITUTION_REQUIRED = "Instituião é obrigatória";
-	public static final String QUIZ_KEY = "A chave é obrigatória";
+	//public static final String QUIZ_KEY = "A chave é obrigatória";
+	public static final String THEME_REQUIRED = "Tema é obrigatatório";
 	
 	// pages
 	public static final String VIEW_CADASTRO_PROFESSOR = "professor/cadastro-professor";
 	public static final String VIEW_CADASTRO_ALUNO = "aluno/cadastro-aluno";
 	public static final String VIEW_CADASTRO_QUIZ = "quiz/cadastro-questao";
 	public static final String VIEW_CADASTRO_RESPOSTA = "resposta/responder-quiz";
+	public static final String VIEW_INDEX = "index";
 }

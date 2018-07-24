@@ -52,26 +52,32 @@
                 
             <!-- card content -->
             <div class="card-content">
-                <div th:each="quiz : ${quizes}">
-                    <p class="enunciado" th:text="${quiz.enunciado}"></p>
+            	<input th:each="aluno : ${alunos}" id="aluno" type="hidden" th:value="${aluno}" />
+                <input th:each="professor : ${professores}" id="professor" type="hidden" th:value="${professor}" />
+                
+                <div id="questoes" th:each="quiz : ${quizes}">
+                	<input id="tema" type="hidden" th:value="${quiz.tema}" />
+                	
+                    <p class="enunciado" th:text="|${quiz.codigo}. ${quiz.enunciado}|"></p>
+                    
                     <div class="row alternativa">
-                        <input type="radio" id="a" th:name="${quiz}" th:value="${quiz.altA}" />
-                        <label class="col-s4 alternative" th:text="|a) ${quiz.altA}|"></label>
+                        <input id="resp_a" type="radio" name="${quiz}" th:value="${quiz.alta}" />
+                        <label class="col-s4" th:text="|a) ${quiz.alta}|"></label>
                     </div>
 
                     <div class="row alternativa">
-                        <input type="radio" id="b" th:name="${quiz}" th:value="${quiz.altB}" />
-                        <label class="col-s4" th:text="|b) ${quiz.altB}|"></label>
+                        <input id="resp_b" type="radio" name="${quiz}" th:value="${quiz.altb}" />
+                        <label class="col-s4" th:text="|b) ${quiz.altb}|"></label>
                     </div>
 
                     <div class="row alternativa">
-                        <input type="radio" id="c" th:name="${quiz}" th:value="${quiz.altC}" />
-                        <label class="col-s4" th:text="|c) ${quiz.altC}|"></label>
+                        <input id="resp_c" type="radio" name="${quiz}" th:value="${quiz.altc}" />
+                        <label class="col-s4" th:text="|c) ${quiz.altc}|"></label>
                     </div>
 
                     <div class="row alternativa">
-                        <input type="radio" id="d" th:name="${quiz}" th:value="${quiz.altD}" />
-                        <label class="col-s4" th:text="|d) ${quiz.altD}|"></label>
+                        <input id="resp_d" type="radio" name="${quiz}" th:value="${quiz.altd}" />
+                        <label class="col-s4" th:text="|d) ${quiz.altd}|"></label>
                     </div>
                 </div>
             </div>
@@ -107,6 +113,6 @@
     <script th:src="@{/js/layout.js}"></script>
     
      <!-- professor-crud.js -->
-    <script th:src="@{/js/aluno-crud.js}"></script>
+    <script th:src="@{/js/resposta-crud.js}"></script>
 </body>
 </html>

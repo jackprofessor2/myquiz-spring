@@ -5,7 +5,7 @@ Quiz.Crud = (function() {
 	
 	Crud = function() {
 		this.btnCadastrar = $('#salvar');
-		this.quiz = $('#quiz');
+		this.tema = $('#tema');
 		this.enunciado = $('#enunciado');
 		this.alternativa_a = $('#alternativa_a');
 		this.alternativa_b = $('#alternativa_b');
@@ -22,11 +22,12 @@ Quiz.Crud = (function() {
 		e.preventDefault();
 
 		var quiz = {
-			"quiz": this.quiz.val(),
-			"altA": this.alternativa_a.val(),
-			"altB": this.alternativa_b.val(),
-			"altC": this.alternativa_c.val(),
-			"altD": this.alternativa_d.val(),
+			"tema": this.tema.val(),
+			"enunciado": this.enunciado.val(),
+			"alta": this.alternativa_a.val(),
+			"altb": this.alternativa_b.val(),
+			"altc": this.alternativa_c.val(),
+			"altd": this.alternativa_d.val(),
 			"resposta": this.resposta.val()
 		};
 		

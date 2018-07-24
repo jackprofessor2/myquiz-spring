@@ -30,12 +30,13 @@ Aluno.Crud = (function() {
 			url: '/alunos',
 			data: JSON.stringify(aluno),
 			success: function(resposta) {
-				alert('Cadastro realizado com sucesso!');
+				swal('Muito bem!', 'Seu cadastro foi realizado com sucesso!', 'success');
 				console.log('Cadastrado com sucesso!', resposta);
 			},
 			error: function(error) {
-				alert('Erro ao realizar o cadastro!');
-				console.log('Erro ao cadastrar.', error);
+				let resp = JSON.parse(error.responseText);
+				//swal('Ops!', error.responseText, 'error');
+				console.log('Message', resp.message);
 			}
 		});
 	}

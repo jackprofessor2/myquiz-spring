@@ -32,12 +32,11 @@ Professor.Crud = (function() {
 			url: '/professores',
 			data: JSON.stringify(professor),
 			success: function(resposta) {
-				alert('Cadastro realizado com sucesso!');
-				console.log('Cadastrado com sucesso!', resposta);
+				swal('Muito bem!', 'Seu cadastro foi realizado com sucesso!', 'success');
 			},
 			error: function(error) {
-				alert('Erro ao realizar o cadastro!');
-				console.log('Erro ao cadastrar.', error);
+				let resp = JSON.parse(error.responseText);
+				swal('Ops!', resp.message, 'error');
 			}
 		});
 	}

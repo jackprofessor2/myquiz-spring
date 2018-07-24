@@ -31,14 +31,16 @@ Aluno.Crud = (function() {
 			data: JSON.stringify(aluno),
 			success: function(resposta) {
 				swal('Muito bem!', 'Seu cadastro foi realizado com sucesso!', 'success');
-				console.log('Cadastrado com sucesso!', resposta);
 			},
 			error: function(error) {
 				let resp = JSON.parse(error.responseText);
-				//swal('Ops!', error.responseText, 'error');
-				console.log('Message', resp.message);
+				swal('Ops!', resp.message, 'error');
 			}
 		});
+		
+		this.nome.val(''),
+		this.instituicao.val(''),
+		this.email.val('')
 	}
 	
 	return Crud;

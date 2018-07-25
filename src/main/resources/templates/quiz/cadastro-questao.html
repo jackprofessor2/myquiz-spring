@@ -16,6 +16,9 @@
 
     <!-- google icons -->
     <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
+    
+    <!-- sweetalert.min.css -->
+    <link th:href="@{/plugins/sweetalert2.min.css}" rel="stylesheet" />
 
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
@@ -26,7 +29,7 @@
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
-        <a href="javascript:;" class="float-left">MyQuiz</a>
+        <a href="javascript:;" class="float-left"><h1>MyQuiz</h1></a>
 
         <a href="javascript:;" class="float-right">
             <i class="material-icons">more_vert</i>
@@ -89,6 +92,9 @@
 
     <!-- jquery.js -->
     <script th:src="@{/js/vendors/jquery.min.js}"></script>
+    
+    <!-- sweetalert.js -->
+    <script th:src="@{/plugins/sweetalert2.min.js}"></script>
 
     <!-- scripts.js -->
     <script th:src="@{/js/layout.js}"></script>

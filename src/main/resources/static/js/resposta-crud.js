@@ -1,5 +1,6 @@
 /** resposta-crud.js */
 var Resposta = Resposta || {};
+var resposta = [];
 
 Resposta.Crud = (function() {
 	
@@ -8,7 +9,6 @@ Resposta.Crud = (function() {
 		this.aluno = $('#aluno');
 		this.professor = $('#professor');
 		this.tema = $('#tema');
-		this.resposta = $('input[name="resposta"]');
 	}
 	
 	Crud.prototype.start = function() {
@@ -22,11 +22,11 @@ Resposta.Crud = (function() {
 			"aluno": this.aluno.val(),
 			"professor": this.professor.val(),
 			"tema": this.tema.val(),
-			"resposta": this.resposta.val()
+			"resposta": resposta
 		};
 		
 		console.log(JSON.stringify(responder));
-		/*
+		
 		$.ajax({
 			type: 'POST',
 			contentType : 'application/json; charset=utf-8',
@@ -34,14 +34,17 @@ Resposta.Crud = (function() {
 			url: '/respostas',
 			data: JSON.stringify(responder),
 			success: function(resposta) {
-				swal('Muito bem!', 'Seu cadastro foi realizado com sucesso!', 'success');
+				swal('Muito bem!', 'Suas resposta foram enviadas com sucesso!', 'success');
 			},
 			error: function(error) {
 				let resp = JSON.parse(error.responseText);
-				swal('Ops!', resp.message, 'error');
+				swal('Ops!', "Erro ao enviar suas resposta", 'error');
 			}
 		});
-		*/
+	}
+	
+	onAddObject = function(object) {
+		resposta.push(object.value);
 	}
 	
 	return Crud;

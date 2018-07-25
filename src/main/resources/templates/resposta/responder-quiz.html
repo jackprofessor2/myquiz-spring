@@ -16,6 +16,9 @@
 
     <!-- google icons -->
     <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
+    
+    <!-- sweetalert.min.css -->
+    <link th:href="@{/plugins/sweetalert2.min.css}" rel="stylesheet" />
 
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
@@ -27,7 +30,7 @@
             <i class="material-icons">keyboard_arrow_left</i>
         </a>
 
-        <a href="javascript:;" class="float-left">MyQuiz</a>
+        <a href="javascript:;" class="float-left"><h1>MyQuiz</h1></a>
 
         <a href="javascript:;" class="float-right">
             <i class="material-icons">more_vert</i>
@@ -61,22 +64,22 @@
                     <p class="enunciado" th:text="|${quiz.codigo}. ${quiz.enunciado}|"></p>
                     
                     <div class="row alternativa">
-                        <input id="resp_a" type="radio" name="${quiz}" th:value="${quiz.alta}" />
+                        <input id="resp_a" type="radio" th:name="${quiz.codigo}" th:value="${quiz.alta}" onclick="onAddObject(this)" />
                         <label class="col-s4" th:text="|a) ${quiz.alta}|"></label>
                     </div>
 
                     <div class="row alternativa">
-                        <input id="resp_b" type="radio" name="${quiz}" th:value="${quiz.altb}" />
+                        <input id="resp_b" type="radio" th:name="${quiz.codigo}" th:value="${quiz.altb}" onclick="onAddObject(this)" />
                         <label class="col-s4" th:text="|b) ${quiz.altb}|"></label>
                     </div>
 
                     <div class="row alternativa">
-                        <input id="resp_c" type="radio" name="${quiz}" th:value="${quiz.altc}" />
+                        <input id="resp_c" type="radio" th:name="${quiz.codigo}" th:value="${quiz.altc}" onclick="onAddObject(this)" />
                         <label class="col-s4" th:text="|c) ${quiz.altc}|"></label>
                     </div>
 
                     <div class="row alternativa">
-                        <input id="resp_d" type="radio" name="${quiz}" th:value="${quiz.altd}" />
+                        <input id="resp_d" type="radio" th:name="${quiz.codigo}" th:value="${quiz.altd}" onclick="onAddObject(this)" />
                         <label class="col-s4" th:text="|d) ${quiz.altd}|"></label>
                     </div>
                 </div>
@@ -108,6 +111,9 @@
 
     <!-- jquery.js -->
     <script th:src="@{/js/vendors/jquery.min.js}"></script>
+    
+    <!-- sweetalert.js -->
+    <script th:src="@{/plugins/sweetalert2.min.js}"></script>
 
     <!-- scripts.js -->
     <script th:src="@{/js/layout.js}"></script>

@@ -1,34 +1,28 @@
 package br.com.jdrmservices.myquiz.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import br.com.jdrmservices.myquiz.util.Constants;
 
 @Entity
-@Table(name = "resposta")
-public class Resposta {
+@Table(name = "alternativa")
+public class Alternativa implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-
-	@ManyToOne
-	private Aluno aluno;
 	
-	@ManyToOne
-	private Professor professor;
-
-	@NotBlank(message = Constants.THEME_REQUIRED)
-	private String tema;
-	
-	private String[] respostas;
+	@NotNull(message = Constants.RESPONSE_ALTERNATIVE)
+	private String resposta;
 	
 	public boolean isNovo() {
 		return this.codigo == null;
@@ -42,20 +36,12 @@ public class Resposta {
 		this.codigo = codigo;
 	}
 
-	public String getTema() {
-		return tema;
+	public String getResposta() {
+		return resposta;
 	}
 
-	public void setTema(String tema) {
-		this.tema = tema;
-	}
-	
-	public String[] getRespostas() {
-		return respostas;
-	}
-
-	public void setRespostas(String[] respostas) {
-		this.respostas = respostas;
+	public void setResposta(String resposta) {
+		this.resposta = resposta;
 	}
 
 	@Override
@@ -74,7 +60,7 @@ public class Resposta {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Resposta other = (Resposta) obj;
+		Alternativa other = (Alternativa) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;

@@ -6,8 +6,8 @@ Resposta.Crud = (function() {
 	
 	Crud = function() {
 		this.btnCadastrar = $('#salvar');
-		this.aluno = $('#aluno');
-		this.professor = $('#professor');
+		//this.aluno = $('#aluno');
+		//this.professor = $('#professor');
 		this.tema = $('#tema');
 	}
 	
@@ -19,10 +19,10 @@ Resposta.Crud = (function() {
 		e.preventDefault();
 
 		var responder = {
-			"aluno": this.aluno.val(),
-			"professor": this.professor.val(),
+			/*"aluno": this.aluno.val(),
+			"professor": this.professor.val(),*/
 			"tema": this.tema.val(),
-			"resposta": resposta
+			"respostas": resposta
 		};
 		
 		console.log(JSON.stringify(responder));
@@ -38,6 +38,7 @@ Resposta.Crud = (function() {
 			},
 			error: function(error) {
 				let resp = JSON.parse(error.responseText);
+				console.log(resp);
 				swal('Ops!', "Erro ao enviar suas resposta", 'error');
 			}
 		});

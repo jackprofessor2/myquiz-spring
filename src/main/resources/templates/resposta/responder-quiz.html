@@ -55,8 +55,8 @@
                 
             <!-- card content -->
             <div class="card-content">
-            	<input th:each="aluno : ${alunos}" id="aluno" type="hidden" th:value="${aluno}" />
-                <input th:each="professor : ${professores}" id="professor" type="hidden" th:value="${professor}" />
+            	<!--<input th:each="aluno : ${alunos}" id="aluno" type="hidden" th:value="${aluno.codigo}" />
+                <input th:each="professor : ${professores}" id="professor" type="hidden" th:value="${professor.codigo}" />-->
                 
                 <div id="questoes" th:each="quiz : ${quizes}">
                 	<input id="tema" type="hidden" th:value="${quiz.tema}" />

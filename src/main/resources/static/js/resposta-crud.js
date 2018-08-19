@@ -6,8 +6,8 @@ Resposta.Crud = (function() {
 	
 	Crud = function() {
 		this.btnCadastrar = $('#salvar');
-		//this.aluno = $('#aluno');
-		//this.professor = $('#professor');
+		this.aluno = $('#aluno');
+		this.professor = $('#professor');
 		this.tema = $('#tema');
 	}
 	
@@ -19,8 +19,8 @@ Resposta.Crud = (function() {
 		e.preventDefault();
 
 		var responder = {
-			/*"aluno": this.aluno.val(),
-			"professor": this.professor.val(),*/
+			"aluno": this.aluno.val(),
+			"professor": this.professor.val(),
 			"tema": this.tema.val(),
 			"respostas": resposta
 		};
@@ -35,6 +35,8 @@ Resposta.Crud = (function() {
 			data: JSON.stringify(responder),
 			success: function(resposta) {
 				swal('Muito bem!', 'Suas resposta foram enviadas com sucesso!', 'success');
+				
+				window.location.href = "/";
 			},
 			error: function(error) {
 				let resp = JSON.parse(error.responseText);

@@ -11,14 +11,13 @@
 
     <!-- manifest.json -->
     <!--<link rel="manifest" href="manifest.json" />-->
+    
+    <meta name="theme-color" content="#FF4500" />
 
     <title>MyQuiz</title>
 
     <!-- google icons -->
     <link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
-    
-    <!-- sweetalert.min.css -->
-    <link th:href="@{/plugins/sweetalert2.min.css}" rel="stylesheet" />
 
     <!-- style.css -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
@@ -45,7 +44,7 @@
         </a>
     </header>
     
-    <!-- main-menu -->
+    <!-- card content -->
     <div id="main-menu">
     	<ul>
 	       <li>
@@ -68,41 +67,19 @@
 
     <!-- content -->
     <section>
-        <form class="card" method="POST" action="/professores">
-            <!-- card title -->
-            <div class="card-title">
-                <h1>CADASTRO DE PROFESSOR</h1>
-            </div>
-                
-            <!-- card content -->
-            <div class="card-content">
-                <div class="row">
-	                <input id="id" type="hidden" class="col-s4" placeholder="Seu id" name="codigo" />
-	                <input id="nome" class="col-s4" type="text" placeholder="Seu nome" name="nome" />
-	                <input id="instituicao" class="col-s4" type="text" placeholder="Sua instituição" name="instituicao" />
-	                <input id="email" class="col-s4" type="text" placeholder="Seu e-mail" name="email" />
-	            	<input id="senha" class="col-s4" type="password" placeholder="Sua senha" name="senha" />
-                </div>
-            </div>
-                
-            <!-- card footer -->
-            <div class="row card-footer">
-                <input id="salvar" class="col-s4" type="submit" value="Salvar" />
-                <input id="listar" class="col-s4" type="button" value="Listar" />
-            </div>
-        </form>
+    <!-- conteúdo da index aqui -->
     </section>
 
     <!-- footer -->
     <footer>
         <div class="footer-links">
-            <a href="javascript:;">
+            <a href="/">
                 <i class="material-icons">home</i>
             </a> |
-            <a href="javascript:;">
+            <a href="/about">
                 <i class="material-icons">contact_support</i>
             </a> |
-            <a href="javascript:;">
+            <a href="/settings">
                 <i class="material-icons">settings</i>
             </a>
         </div> 
@@ -110,16 +87,13 @@
         <p>Copyright &copy; IFCE 2018, Todos os direitos reservados.</p>
     </footer>
 
-    <!-- jquery.js -->
+	<!-- jquery.js -->
     <script th:src="@{/js/vendors/jquery.min.js}"></script>
-    
-    <!-- sweetalert.js -->
-    <script th:src="@{/plugins/sweetalert2.min.js}"></script>
 
     <!-- scripts.js -->
     <script th:src="@{/js/layout.js}"></script>
     
      <!-- professor-crud.js -->
-    <script th:src="@{/js/professor-crud.js}"></script>
+    <script th:src="@{/js/aluno-crud.js}"></script>
 </body>
 </html>

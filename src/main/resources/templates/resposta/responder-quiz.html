@@ -44,6 +44,27 @@
             <i class="material-icons">share</i>
         </a>
     </header>
+    
+    <!-- main-menu -->
+    <div id="main-menu">
+    	<ul>
+	       <li>
+	       		<a th:href="@{/alunos/novo}">CADASTRAR ALUNO</a>
+	       </li>
+	       
+	       <li>
+	       		<a th:href="@{/professores/novo}">CADASTRAR PROFESSOR</a>
+	       </li>
+	       
+	       <li>
+	       		<a th:href="@{/quizes/novo}">CADASTRAR QUIZ</a>
+	       </li>
+	       
+	       <li>
+	       		<a th:href="@{/quizes/novo}">SAIR</a>
+	       </li>
+    	</ul>
+    </div>
 
     <!-- content -->
     <section>
@@ -58,7 +79,7 @@
             	<!--<input th:each="aluno : ${alunos}" id="aluno" type="hidden" th:value="${aluno.codigo}" />
                 <input th:each="professor : ${professores}" id="professor" type="hidden" th:value="${professor.codigo}" />-->
                 
-                <div id="questoes" th:each="quiz : ${quizes}">
+                <div id="questoes" th:each="quiz : ${quizes}" class="inputGroup">
                 	<input id="tema" type="hidden" th:value="${quiz.tema}" />
                 	
                     <p class="enunciado" th:text="|${quiz.codigo}. ${quiz.enunciado}|"></p>
@@ -82,7 +103,7 @@
                         <input id="resp_d" type="radio" th:name="${quiz.codigo}" th:value="${quiz.altd}" onclick="onAddObject(this)" />
                         <label class="col-s4" th:text="|d) ${quiz.altd}|"></label>
                     </div>
-                </div>
+				</div>
             </div>
                 
             <!-- card footer -->

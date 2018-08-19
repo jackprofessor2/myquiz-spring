@@ -35,5 +35,5 @@ public class Constants {
 	public static final String VIEW_CADASTRO_ALUNO = "aluno/cadastro-aluno";
 	public static final String VIEW_CADASTRO_QUIZ = "quiz/cadastro-questao";
 	public static final String VIEW_CADASTRO_RESPOSTA = "resposta/responder-quiz";
-	public static final String VIEW_INDEX = "index";
+	public static final String VIEW_INDEX = "layout/default";
 }

@@ -44,7 +44,7 @@ a:hover {
 
 /** header */
 header {
-    background-color: rgb(196, 60, 13);
+    background-color: /*rgb(196, 60, 13)*/ #FF4500;
     box-shadow:  0 0 5px rgba(0, 0, 0, 0.5);
     z-index: 9999;
     position: fixed;
@@ -61,6 +61,35 @@ header h1 {
     margin-left: 5px;
 }
 
+/* main-menu */
+div#main-menu {
+	position: absolute;
+	display: none;
+	float: right;
+	right: 0;
+	width: 80%;
+	background-color: rgba(10, 10, 10, 0.9);
+	margin-top: 48px;
+	padding: 15px;
+	z-index: 9999 !important;
+}
+
+div#main-menu ul {
+	list-style: none;
+}
+
+div#main-menu ul li {
+	margin-bottom: 25px;
+}
+
+div#main-menu ul li:hover {
+	background-color: rgba(255, 255, 255, 0.3);;
+}
+
+div#main-menu ul li a {
+	color: #fff;
+}
+
 /** content */
 section {
     background-color: transparent;
@@ -69,6 +98,7 @@ section {
     position: absolute;
     margin-top: 45px;
     padding: 15px;
+    z-index: 0;
 }
 
 /** cards */
@@ -133,6 +163,24 @@ input[type="radio"] {
     font: 16px/1em sans-serif;
     vertical-align: top;
     border-radius:4px;
+}
+
+input[type="radio"]:checked ~ label {
+      color: #ff3300;
+
+      &:before {
+        transform: translate(-50%, -50%) scale3d(56, 56, 1);
+        opacity: 1;
+      }
+
+      &:after {
+        background-color: #54E0C7;
+        border-color: #54E0C7;
+      }
+}
+
+label:affter {
+	content: "TESTE";
 }
 
 /** question */
